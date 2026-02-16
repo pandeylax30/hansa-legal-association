@@ -1,0 +1,60 @@
+@reference "../index.css";
+
+.nav-wrapper {
+  @apply fixed top-0 w-full z-[100] px-6 py-8 transition-all duration-500;
+}
+
+/* Scroll hone par padding kam ho jayegi */
+.nav-scrolled {
+  @apply py-4;
+}
+
+.nav-container {
+  @apply mx-auto max-w-7xl px-8 py-4 flex items-center justify-between
+         bg-legal-navy/40 backdrop-blur-md border border-white/10
+         rounded-none shadow-2xl transition-all duration-500;
+}
+
+/* Logo Styling */
+.brand-logo {
+  @apply flex items-center gap-3 cursor-pointer;
+}
+
+.logo-icon {
+  @apply text-legal-gold;
+}
+
+.logo-text {
+  @apply text-xl font-serif tracking-[0.2em] text-white uppercase font-light;
+}
+
+.logo-text span {
+  @apply text-legal-gold italic font-bold;
+}
+
+/* Links Alignment */
+.nav-links-container {
+  @apply hidden md:flex items-center gap-10;
+}
+
+.nav-link-item {
+  @apply text-[10px] font-bold text-legal-silver/60 hover:text-legal-gold 
+         transition-all uppercase tracking-[0.3em] relative py-2;
+}
+
+/* Hover underline effect */
+.nav-link-item::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-[1px] bg-legal-gold transition-all duration-300;
+}
+
+.nav-link-item:hover::after {
+  @apply w-full;
+}
+
+/* CTA Button Styling */
+.nav-cta-btn {
+  @apply bg-legal-gold text-legal-navy px-8 py-2 rounded-none font-bold text-[10px]
+         uppercase tracking-[0.2em] hover:bg-white hover:text-legal-navy 
+         transition-all duration-500 shadow-lg shadow-black/20;
+}

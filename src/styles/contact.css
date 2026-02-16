@@ -1,0 +1,68 @@
+@reference "../index.css";
+
+.contact-section-wrapper {
+  @apply relative py-32 px-6 bg-legal-navy overflow-hidden min-h-screen flex items-center;
+}
+
+/* Luxury Glow overlay */
+.contact-glow-overlay {
+  @apply absolute bottom-0 right-0 w-[600px] h-[600px] bg-legal-gold/5 rounded-full blur-[150px] -z-10;
+}
+
+.contact-container {
+  @apply max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-24 items-center;
+}
+
+/* Left Side Content */
+.contact-h2 {
+  @apply text-5xl md:text-7xl font-serif font-light text-white mb-8 leading-tight;
+}
+
+.contact-h2 span {
+  @apply text-legal-gold italic;
+}
+
+.contact-p {
+  @apply text-lg text-legal-silver/50 max-w-md mb-12 border-l-2 border-legal-gold/30 pl-8;
+}
+
+.contact-details-grid {
+  @apply space-y-8;
+}
+
+.contact-item {
+  @apply flex items-center gap-6;
+}
+
+.contact-icon-box {
+  @apply w-12 h-12 flex items-center justify-center border border-white/10 text-legal-gold
+         transition-all duration-500 group-hover:border-legal-gold group-hover:bg-legal-gold/5;
+}
+
+.contact-label {
+  @apply text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-1;
+}
+
+.contact-value {
+  @apply text-lg font-serif text-white/80 group-hover:text-legal-gold transition-colors;
+}
+
+/* Right Side Form Card */
+.form-card-premium {
+  @apply bg-white/[0.03] border border-white/10 rounded-none shadow-2xl p-4 backdrop-blur-md;
+}
+
+.form-label-gold {
+  @apply text-[10px] uppercase tracking-[0.2em] text-legal-gold/60 font-bold;
+}
+
+.form-input-premium {
+  @apply bg-transparent border-0 border-b border-white/10 rounded-none py-6 
+         text-white focus-visible:ring-0 focus-visible:border-legal-gold 
+         transition-all placeholder:text-white/10;
+}
+
+.btn-submit-premium {
+  @apply w-full bg-legal-gold text-legal-navy py-8 rounded-none font-bold uppercase 
+         tracking-[0.3em] hover:bg-white transition-all duration-700 text-xs;
+}

@@ -1,0 +1,67 @@
+@reference "../index.css";
+
+.hero-wrapper {
+  @apply relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 bg-legal-navy text-white overflow-hidden;
+}
+
+/* Background Glow Fix */
+.hero-wrapper::before {
+  content: '';
+  @apply absolute top-0 right-0 w-[600px] h-[600px] bg-legal-gold/10 
+         rounded-full blur-[150px] -z-10;
+}
+
+/* Alignment Container */
+.hero-container {
+  @apply max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center;
+}
+
+.hero-content {
+  @apply flex flex-col items-start text-left;
+}
+
+.hero-badge {
+  @apply mb-8 border-legal-gold/50 text-legal-gold px-6 py-1.5 rounded-none 
+         uppercase tracking-[0.3em] text-[10px] font-bold bg-legal-gold/5;
+}
+
+.hero-h1 {
+  @apply text-6xl md:text-8xl font-serif font-light mb-8 leading-[1.1];
+}
+
+.hero-h1 span {
+  @apply text-legal-gold italic;
+}
+
+.hero-p {
+  @apply text-lg text-legal-silver/60 max-w-xl mb-12 border-l-2 border-legal-gold/30 pl-8 leading-relaxed;
+}
+
+.hero-actions {
+  @apply flex flex-wrap gap-6;
+}
+
+/* Buttons */
+.btn-main {
+  @apply bg-legal-gold text-legal-navy px-12 py-8 rounded-none font-bold uppercase tracking-widest
+         hover:bg-white transition-all duration-500 shadow-xl shadow-black/20;
+}
+
+.btn-outline-gold {
+  @apply border-white/20 text-white px-12 py-8 rounded-none font-bold uppercase tracking-widest
+         hover:border-legal-gold hover:text-legal-gold transition-all duration-500 bg-transparent;
+}
+
+/* Image Side Alignment */
+.hero-image-container {
+  @apply relative flex justify-center lg:justify-end;
+}
+
+.image-border-decoration {
+  @apply relative p-4 border border-legal-gold/20;
+}
+
+.hero-img {
+  @apply w-full max-w-[500px] aspect-[4/5] object-cover grayscale opacity-80 
+         transition-all duration-700 hover:grayscale-0 hover:opacity-100 shadow-2xl;
+}

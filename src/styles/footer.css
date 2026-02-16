@@ -1,0 +1,78 @@
+@reference "../index.css";
+
+.footer-wrapper {
+  @apply py-20 px-6 bg-legal-navy border-t border-white/5 text-white relative overflow-hidden;
+}
+
+/* Background Glow (matching the whole theme) */
+.footer-wrapper::after {
+  content: '';
+  @apply absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-legal-gold/5 
+         rounded-full blur-[120px] -z-10;
+}
+
+.footer-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16;
+}
+
+/* Logo & Brand */
+.footer-logo {
+  @apply text-2xl font-serif text-white tracking-widest uppercase mb-6;
+}
+
+.footer-logo span {
+  @apply text-legal-gold font-bold italic;
+}
+
+.footer-description {
+  @apply text-sm text-legal-silver/40 leading-relaxed mb-8 max-w-xs;
+}
+
+/* Social Buttons */
+.social-links {
+  @apply flex gap-4;
+}
+
+.social-btn {
+  @apply rounded-none border-white/10 bg-transparent text-legal-silver/60 
+         hover:bg-legal-gold hover:text-legal-navy hover:border-legal-gold transition-all duration-500;
+}
+
+/* Headings & Lists */
+.footer-heading {
+  @apply text-legal-gold font-bold uppercase tracking-[0.3em] text-[10px] mb-8;
+}
+
+.footer-list {
+  @apply space-y-4;
+}
+
+.footer-link {
+  @apply text-xs text-legal-silver/40 hover:text-legal-gold transition-colors duration-300 tracking-wider;
+}
+
+/* Contact Info */
+.contact-info-footer {
+  @apply space-y-4 text-xs text-legal-silver/40;
+}
+
+.contact-info-footer p {
+  @apply flex items-center gap-3;
+}
+
+/* Bottom Bar */
+.footer-separator {
+  @apply bg-white/5 mb-10;
+}
+
+.footer-bottom {
+  @apply flex flex-col md:flex-row justify-between items-center gap-6;
+}
+
+.copyright-text {
+  @apply text-[9px] text-legal-silver/20 tracking-[0.2em] uppercase;
+}
+
+.bottom-links {
+  @apply flex gap-8;
+}
