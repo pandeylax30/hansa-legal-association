@@ -1,24 +1,31 @@
-// 1. CSS Imports (Order matters to avoid EMFILE)
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css"; 
 
-// 2. Component Imports
+// Layout components (Jo har page par dikhenge)
 import Navbar from "./components/layout/Navbar";
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
-import Services from "./components/sections/Services";
-import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
+
+// Pages
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-legal-navy">
+        <Navbar />
+        
+        <Routes>
+          {/* Jab koi sirf website khole (Home Page) */}
+          <Route path="/" element={<Home />} />
+          
+          {/* Jab koi /login par jaye (Login Page) */}
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

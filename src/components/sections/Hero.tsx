@@ -5,7 +5,7 @@ import '../../styles/hero.css';
 
 const Hero: React.FC = () => {
   return (
-    <section className="hero-wrapper">
+    <section className="hero-wrapper" id="home">
       {/* Background elements are handled in CSS via ::before */}
       
       <div className="hero-container">

@@ -4,7 +4,7 @@ import "../../styles/about.css"; // CSS Import zaroori hai
 
 const About = () => {
   return (
-    <section className="about-section">
+    <section className="about-section"  id="about">
       <div className="about-glow" />
 
       <div className="about-container">

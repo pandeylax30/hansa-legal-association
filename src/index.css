@@ -34,3 +34,29 @@
     @apply bg-legal-gold text-legal-navy px-8 py-3 font-bold uppercase tracking-widest text-[10px] transition-all hover:bg-white cursor-pointer;
   }
 }
+
+/* login.css ka saara content yahi niche paste kar dein taaki koi loop na bane */
+@layer components {
+  .login-page-container {
+    /* pt-24 add kiya hai taaki navbar ke niche se shuru ho */
+    @apply min-h-screen flex items-center justify-center relative overflow-hidden bg-legal-navy pt-24 pb-12;
+  }
+
+  .login-glow {
+    @apply absolute w-[500px] h-[500px] rounded-full;
+    background: radial-gradient(circle, rgba(197, 164, 126, 0.05) 0%, transparent 70%);
+    filter: blur(60px);
+  }
+
+  .login-card-container {
+    @apply w-full max-w-md z-10 p-1 border border-white/10 bg-white/[0.02] backdrop-blur-xl shadow-2xl;
+  }
+
+  .login-field {
+    @apply bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-legal-gold/50 transition-all duration-500 rounded-none;
+  }
+
+  .login-label {
+    @apply text-[10px] uppercase tracking-[0.2em] text-legal-gold font-bold mb-2 block;
+  }
+}

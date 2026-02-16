@@ -1,38 +1,53 @@
 @reference "../index.css";
 
 .nav-wrapper {
-  @apply fixed top-0 w-full z-[100] px-6 py-8 transition-all duration-500;
+  @apply fixed top-0 w-full z-[100] px-6 py-6 transition-all duration-500;
 }
 
-/* Scroll hone par padding kam ho jayegi */
+/* Scroll effect */
 .nav-scrolled {
   @apply py-4;
+}
+
+.nav-scrolled .nav-container {
+  @apply bg-legal-navy/90 border-white/5;
 }
 
 .nav-container {
   @apply mx-auto max-w-7xl px-8 py-4 flex items-center justify-between
          bg-legal-navy/40 backdrop-blur-md border border-white/10
-         rounded-none shadow-2xl transition-all duration-500;
+         rounded-none shadow-2xl transition-all duration-500 relative;
 }
 
-/* Logo Styling */
+/* --- Mobile Menu Fix --- */
+
+.mobile-menu-box {
+  /* top-[100%] ka matlab hai navbar container ke thik niche se shuru hona */
+  @apply md:hidden absolute top-[100%] left-0 right-0 mt-2
+         bg-legal-navy/98 backdrop-blur-2xl border border-white/10 
+         shadow-2xl z-[90] overflow-hidden;
+}
+
+.mobile-nav-link {
+  @apply text-[11px] font-bold text-white/70 uppercase tracking-[0.4em] 
+         hover:text-legal-gold transition-all duration-300 w-full text-center py-4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Logo & Text adjustments */
 .brand-logo {
   @apply flex items-center gap-3 cursor-pointer;
 }
 
-.logo-icon {
-  @apply text-legal-gold;
-}
-
 .logo-text {
-  @apply text-xl font-serif tracking-[0.2em] text-white uppercase font-light;
+  @apply text-base md:text-xl font-serif tracking-[0.2em] text-white uppercase;
 }
 
 .logo-text span {
   @apply text-legal-gold italic font-bold;
 }
 
-/* Links Alignment */
+/* Desktop links hidden on mobile */
 .nav-links-container {
   @apply hidden md:flex items-center gap-10;
 }
@@ -42,19 +57,8 @@
          transition-all uppercase tracking-[0.3em] relative py-2;
 }
 
-/* Hover underline effect */
-.nav-link-item::after {
-  content: '';
-  @apply absolute bottom-0 left-0 w-0 h-[1px] bg-legal-gold transition-all duration-300;
-}
-
-.nav-link-item:hover::after {
-  @apply w-full;
-}
-
-/* CTA Button Styling */
+/* CTA Button responsive */
 .nav-cta-btn {
-  @apply bg-legal-gold text-legal-navy px-8 py-2 rounded-none font-bold text-[10px]
-         uppercase tracking-[0.2em] hover:bg-white hover:text-legal-navy 
-         transition-all duration-500 shadow-lg shadow-black/20;
+  @apply bg-legal-gold text-legal-navy px-6 md:px-8 py-2 rounded-none font-bold text-[10px]
+         uppercase tracking-[0.2em] hover:bg-white transition-all duration-500;
 }
