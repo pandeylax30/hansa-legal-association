@@ -15,12 +15,12 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Contact", href: "#contact" },
-  ];
+ const navLinks = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Contact", href: "#contact" },
+];
 
   return (
     <nav className={`nav-wrapper ${isScrolled || isOpen ? 'nav-scrolled' : ''}`}>
