@@ -41,3 +41,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: View Deployment Link
+        run: |
+          echo "------------------------------------------------------------"
+          echo "Aapka Project Live Hai: https://pandeylax30.github.io/hansa-legal-association/"
+          echo "------------------------------------------------------------"
