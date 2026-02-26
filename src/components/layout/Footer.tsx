@@ -47,10 +47,10 @@ const Footer: React.FC = () => {
           <div className="footer-link-column">
             <h3 className="footer-heading">Expertise</h3>
             <ul className="footer-list">
-              <li><a href="#" className="footer-link">Civil Litigation</a></li>
-              <li><a href="#" className="footer-link">Criminal Defense</a></li>
-              <li><a href="#" className="footer-link">Corporate Law</a></li>
-              <li><a href="#" className="footer-link">Arbitration</a></li>
+              <li><a href="#civil" className="footer-link">Civil Litigation</a></li>
+              <li><a href="#criminal" className="footer-link">Criminal Defense</a></li>
+              <li><a href="#corporate" className="footer-link">Corporate Law</a></li>
+              <li><a href="#arbitration" className="footer-link">Arbitration</a></li>
             </ul>
           </div>
 

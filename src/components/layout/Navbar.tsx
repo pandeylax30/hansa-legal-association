@@ -18,6 +18,7 @@ const Navbar: React.FC = () => {
  const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
+  { name: "Advocate", href: "#advocate" },
   { name: "Services", href: "#services" },
   { name: "Contact", href: "#contact" },
 ];
@@ -55,36 +56,35 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay - Refined Logic */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="mobile-menu-box"
+      {/* Mobile Menu Overlay */}
+<AnimatePresence>
+  {isOpen && (
+    <motion.div 
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="fixed inset-0 z-[150] bg-legal-navy/98 backdrop-blur-2xl md:hidden"
+    >
+      <div className="flex flex-col items-center justify-center h-full space-y-10">
+        {navLinks.map((link) => (
+          <a 
+            key={link.name} 
+            href={link.href} 
+            className="text-white/80 text-2xl font-serif uppercase tracking-[0.3em] hover:text-legal-gold transition-colors"
+            onClick={() => setIsOpen(false)}
           >
-            <div className="flex flex-col gap-6 p-8 items-center">
-              {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
-                  className="mobile-nav-link"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <div className="w-full h-[1px] bg-white/5 my-2"></div>
-              <Link to="/login" onClick={() => setIsOpen(false)} className="w-full">
-                <Button className="w-full bg-legal-gold text-legal-navy rounded-none py-6 font-bold uppercase tracking-widest text-[10px]">
-                  Client Portal
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {link.name}
+          </a>
+        ))}
+        <Link to="/login" onClick={() => setIsOpen(false)}>
+          <Button className="bg-legal-gold text-legal-navy px-12 py-6 rounded-none font-bold uppercase tracking-widest">
+            Client Portal
+          </Button>
+        </Link>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </nav>
   );
 };

@@ -21,7 +21,7 @@ const Login = () => {
     setTimeout(() => {
       if (email === "admin@hansa.com" && password === "12345") {
         // Agar sahi hai toh Panel par bhej do
-        navigate('/panel'); 
+        navigate('/'); 
       } else {
         setError('Invalid Security Credentials. Access Denied.');
         setIsLoading(false);
