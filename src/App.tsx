@@ -12,16 +12,21 @@ function App() {
     return localStorage.getItem("isAuth") === "true";
   });
 
-  // Jab bhi loginSuccess call hoga, state change hogi aur Navbar dikhega
   const loginSuccess = () => {
     localStorage.setItem("isAuth", "true");
     setIsAuthenticated(true);
   };
 
+  // --- YE FUNCTION REFRESH KO ROKEGA ---
+  const handleLogout = () => {
+    localStorage.removeItem("isAuth");
+    setIsAuthenticated(false); // State turant update hogi, reload ki zarurat nahi
+  };
+
   return (
     <div className="min-h-screen bg-legal-navy">
-      {/* Navbar yahan tabhi aayega jab isAuthenticated true hoga */}
-      {isAuthenticated && <Navbar />}
+      {/* Navbar ko logout function pass karein */}
+      {isAuthenticated && <Navbar onLogout={handleLogout} />}
 
       <Routes>
         <Route 
